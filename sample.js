@@ -132,7 +132,9 @@ frenchBooks.forEach((book) => console.log(`- ${book.title}`));
   // Find all books that have a tags field, regardless of its value.
   //   { tags: { $exists: true } }
   // Log each title and its tags array.
-
+const taggedBooks = await books.find({ tags: { $exists: true } }).toArray();
+console.log("Books with tags");
+taggedBooks.forEach((book) => console.log(`- ${book.title}`));
   // Always close the connection when you are done.
   await client.close();
 }
