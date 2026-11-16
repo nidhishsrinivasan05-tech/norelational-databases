@@ -104,7 +104,9 @@ await books.insertMany([
   // ----------------------------------------------------------
   // Retrieve every document in the collection and log each title.
   // Hint: find() returns a cursor - call .toArray() to get an array.
-
+const allBooks = await books.find().toArray();
+console.log("All books:");
+allBooks.forEach((book) => console.log(`- ${book.title}`));
   // ----------------------------------------------------------
   // TODO 5 - findOne with dot notation
   // ----------------------------------------------------------
@@ -112,13 +114,18 @@ await books.insertMany([
   // Dot notation lets you filter on a field inside an embedded object:
   //   { "publisher.country": "France" }
   // Log the title of the result.
-
+const frenchBook = await books.findOne({ "publisher.country": "France" });
+if (frenchBook) {
+  console.log(`First French book: ${frenchBook.title}`);
+}
   // ----------------------------------------------------------
   // TODO 6 - find with a filter
   // ----------------------------------------------------------
   // Find all books whose publisher.country is "France".
   // Log how many there are and list their titles.
-
+const frenchBooks = await books.find({ "publisher.country": "France" }).toArray();
+console.log(`Found ${frenchBooks.length} French books:`);
+frenchBooks.forEach((book) => console.log(`- ${book.title}`));
   // ----------------------------------------------------------
   // TODO 7 - find with $exists
   // ----------------------------------------------------------
