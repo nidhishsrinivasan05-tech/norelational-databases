@@ -135,6 +135,7 @@ frenchBooks.forEach((book) => console.log(`- ${book.title}`));
 const taggedBooks = await books.find({ tags: { $exists: true } }).toArray();
 console.log("Books with tags");
 taggedBooks.forEach((book) => console.log(`- ${book.title}`));
+
   // Always close the connection when you are done.
   await client.close();
 }
