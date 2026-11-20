@@ -76,8 +76,7 @@ async function main() {
   allUsers.forEach((u) => console.log(u.name));
 
   // TODO 5: use dot notation to find the user whose address.city is "Paris" and log the result.
-  // PURPOSEFUL MISTAKE (The classic subdocument trap):
-  const parisUser = await users.findOne({ address: { city: "Paris" } });
+  const parisUser = await users.findOne({ "address.city": "Paris" });
   console.log("\n--- User in Paris ---");
   console.log(parisUser);
 
