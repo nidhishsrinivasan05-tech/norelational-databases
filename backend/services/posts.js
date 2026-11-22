@@ -25,8 +25,8 @@ async function findById(id) {
 // Returns the created document.
 // ----------------------------------------------------------
 async function create(body) {
-  // Intentional error 3: missing populate on created post
-  return Post.create(body);
+  const post = await Post.create(body);
+  return post.populate("author", "name email avatar");
 }
 
 // ----------------------------------------------------------

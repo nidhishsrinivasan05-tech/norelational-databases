@@ -32,8 +32,7 @@ async function create(body) {
 // Returns the updated document, or null if not found.
 // ----------------------------------------------------------
 async function update(id, body) {
-  // Intentional error 1: missing { new: true }
-  return User.findByIdAndUpdate(id, body);
+  return User.findByIdAndUpdate(id, body, { new: true });
 }
 
 // ----------------------------------------------------------
