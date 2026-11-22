@@ -5,7 +5,7 @@ on:
 
 jobs:
   grade:
-    name: Milestone 1
+    name: Milestone 2
     runs-on: ubuntu-latest
 
     services:
@@ -70,7 +70,7 @@ jobs:
               \"student\": \"${{ github.actor }}\",
               \"tag\": \"${{ github.ref_name }}\",
               \"status\": \"${{ job.status }}\",
-              \"milestone\": \"1\",
+              \"milestone\": \"2\",
               \"passed\": \"${{ steps.grade-result.outputs.passed }}\",
               \"failed\": \"${{ steps.grade-result.outputs.failed }}\",
               \"total\": \"${{ steps.grade-result.outputs.total }}\",
