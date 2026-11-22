@@ -16,8 +16,7 @@ async function findAll() {
 // Returns null if no post is found.
 // ----------------------------------------------------------
 async function findById(id) {
-  // Intentional error 2: missing populate
-  return Post.findById(id);
+  return Post.findById(id).populate("author", "name email avatar");
 }
 
 // ----------------------------------------------------------
