@@ -1,3 +1,4 @@
+// TODO: uncomment this line once your User model is ready
 const User = require("../models/user");
 
 // The service layer handles all interaction with the database.
@@ -8,6 +9,8 @@ const User = require("../models/user");
 // Return all users as an array.
 // ----------------------------------------------------------
 async function findAll() {
+  // This is hardcoded example data so the frontend works straight away.
+  // TODO: replace with User.find()
   return User.find();
 }
 
@@ -16,6 +19,7 @@ async function findAll() {
 // Returns null if no user is found.
 // ----------------------------------------------------------
 async function findById(id) {
+  // TODO: return User.findById(id)
   return User.findById(id);
 }
 
@@ -24,6 +28,7 @@ async function findById(id) {
 // Returns the created document.
 // ----------------------------------------------------------
 async function create(body) {
+  // TODO: return User.create(body)
   return User.create(body);
 }
 
@@ -32,6 +37,7 @@ async function create(body) {
 // Returns the updated document, or null if not found.
 // ----------------------------------------------------------
 async function update(id, body) {
+  // TODO: return User.findByIdAndUpdate(id, body, { new: true })
   return User.findByIdAndUpdate(id, body, { new: true });
 }
 
@@ -40,6 +46,7 @@ async function update(id, body) {
 // Returns the deleted document, or null if not found.
 // ----------------------------------------------------------
 async function remove(id) {
+  // TODO: return User.findByIdAndDelete(id)
   return User.findByIdAndDelete(id);
 }
 
